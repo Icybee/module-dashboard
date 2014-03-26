@@ -88,3 +88,40 @@
 	visibility: hidden;
 	height: 1px;
 }
+
+.panel-table thead {
+	background: white;
+	color: #808080;
+	border-bottom: 1px solid #CCC;
+}
+
+.panel-table tfoot {
+	background: linear-gradient(to bottom, #FFFFFF, rgba(255, 255, 255, 0)) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	border-top: 1px solid #CFCFCF;
+	font-size: 12px;
+	text-align: center;
+}
+
+.panel-table tfoot a:not(:hover) {
+	color: inherit;
+}
+
+.panel-table th {
+	font-weight: normal;
+	text-align: left;
+}
+
+.panel-table th,
+.panel-table td {
+	padding: 4px 8px;
+}
+
+.panel-table th:first-child,
+.panel-table td:first-child {
+	padding-left: 15px;
+}
+
+.panel-table th:last-child,
+.panel-table td:last-child {
+	padding-right: 15px;
+}
