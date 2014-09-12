@@ -13,7 +13,6 @@ namespace Icybee\Modules\Dashboard;
 
 use ICanBoogie\HTTP\RedirectResponse;
 use ICanBoogie\Routing\Dispatcher;
-use ICanBoogie\Route;
 
 class Hooks
 {
