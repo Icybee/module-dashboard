@@ -2,15 +2,15 @@
 
 namespace Icybee\Modules\Dashboard;
 
-use ICanBoogie\Module;
+use ICanBoogie\Module\Descriptor;
 
 return array
 (
-	Module::T_DESCRIPTION => 'Hosts widgets that display information about what is happening in Icybee.',
-	Module::T_CATEGORY => 'dashboard',
-	Module::T_NAMESPACE => __NAMESPACE__,
-	Module::T_REQUIRED => true,
-	Module::T_PERMISSION => false,
-	Module::T_TITLE => 'Dashboard',
-	Module::T_VERSION => '1.0'
+	Descriptor::DESCRIPTION => 'Hosts widgets that display information about what is happening in Icybee.',
+	Descriptor::CATEGORY => 'dashboard',
+	Descriptor::NS => __NAMESPACE__,
+	Descriptor::REQUIRED => true,
+	Descriptor::PERMISSION => false,
+	Descriptor::TITLE => 'Dashboard',
+	Descriptor::VERSION => '1.0'
 );
