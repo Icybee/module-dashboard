@@ -2,12 +2,14 @@
 
 namespace Icybee\Modules\Dashboard;
 
-return array
-(
-	'admin:dashboard' => array
-	(
+return [
+
+	'admin:dashboard' => [
+
 		'pattern' => '/admin/dashboard',
 		'block' => 'dashboard',
 		'controller' => __NAMESPACE__ . '\BlockController'
-	)
-);
+
+	]
+
+];

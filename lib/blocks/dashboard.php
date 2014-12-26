@@ -36,7 +36,7 @@ class DashboardBlock extends Element
 	{
 		$this->module = $module;
 
-		parent::__construct('div', array('id' => 'dashboard'));
+		parent::__construct('div', [ 'id' => 'dashboard' ]);
 	}
 
 	public function render_inner_html()
@@ -46,11 +46,7 @@ class DashboardBlock extends Element
 
 		foreach ($panels as $i => $panel)
 		{
-			$panels[$i] += array
-			(
-				'column' => 0,
-				'weight' => 0
-			);
+			$panels[$i] +=  [ 'column' => 0, 'weight' => 0 ];
 		}
 
 		$user_config = $app->user->metas['dashboard.order'];
@@ -82,11 +78,7 @@ EOT;
 
 	protected function render_panels(array $panels)
 	{
-		$colunms = array
-		(
-			array(),
-			array()
-		);
+		$colunms = [ [ ], [ ] ];
 
 		// config sign: ⚙
 
@@ -111,7 +103,7 @@ EOT;
 				continue;
 			}
 
-			$title = I18n\t($id, array(), array('scope' => 'dashboard.title', 'default' => $descriptor['title']));
+			$title = I18n\t($id, [ ], [ 'scope' => 'dashboard.title', 'default' => $descriptor['title'] ]);
 
 			$panel = <<<EOT
 <div class="panel" id="$id">

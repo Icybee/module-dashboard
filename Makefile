@@ -7,15 +7,11 @@ MODULE_NAME = "Icybee/Modules/Dashboard"
 usage:
 	@echo "test:  Runs the test suite.\ndoc:   Creates the documentation.\nclean: Removes the documentation, the dependencies and the Composer files."
 
-composer.phar:
-	@echo "Installing composer..."
-	@curl -s https://getcomposer.org/installer | php
-
-vendor: composer.phar
-	@php composer.phar install --prefer-source --dev
+vendor:
+	@composer install --dev
 
 update:
-	@php composer.phar update --prefer-source --dev
+	@composer update --dev
 
 test: vendor
 	@phpunit

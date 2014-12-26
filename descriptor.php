@@ -4,8 +4,8 @@ namespace Icybee\Modules\Dashboard;
 
 use ICanBoogie\Module\Descriptor;
 
-return array
-(
+return [
+
 	Descriptor::DESCRIPTION => 'Hosts widgets that display information about what is happening in Icybee.',
 	Descriptor::CATEGORY => 'dashboard',
 	Descriptor::NS => __NAMESPACE__,
@@ -13,4 +13,5 @@ return array
 	Descriptor::PERMISSION => false,
 	Descriptor::TITLE => 'Dashboard',
 	Descriptor::VERSION => '1.0'
-);
+
+];

@@ -30,9 +30,15 @@ The order in which the user rearranged its widgets is stored in the `dashboard.o
 
 
 
+----------
+
+
+
+
+
 ## Requirement
 
-The package requires PHP 5.3 or later.
+The package requires PHP 5.4 or later.
 
 
 
@@ -43,14 +49,8 @@ The package requires PHP 5.3 or later.
 The recommended way to install this package is through [Composer](http://getcomposer.org/).
 Create a `composer.json` file and run `php composer.phar install` command to install it:
 
-```json
-{
-	"minimum-stability": "dev",
-	"require":
-	{
-		"icybee/module-dashboard": "*"
-	}
-}
+```
+$ composer require icybee/module-dashboard
 ```
 
 Note: This package is part of the packages required by the CMS [Icybee](http://icybee.org). 
@@ -84,4 +84,4 @@ cleaned with the `make clean` command.
 
 ## License
 
-The module is licensed under the New BSD License - See the LICENSE file for details.
+The module is licensed under the New BSD License - See the [LICENSE](LICENCE) file for details.
