@@ -15,9 +15,7 @@ class BlockController extends \Icybee\BlockController
 {
 	protected function control_permission($permission)
 	{
-		global $core;
-
-		if ($core->user->is_guest)
+		if ($this->user->is_guest)
 		{
 			return false;
 		}

@@ -41,9 +41,8 @@ class DashboardBlock extends Element
 
 	public function render_inner_html()
 	{
-		global $core;
-
-		$panels = $core->configs->synthesize('dashboard', 'merge');
+		$app = $this->app;
+		$panels = $app->configs->synthesize('dashboard', 'merge');
 
 		foreach ($panels as $i => $panel)
 		{
@@ -54,7 +53,7 @@ class DashboardBlock extends Element
 			);
 		}
 
-		$user_config = $core->user->metas['dashboard.order'];
+		$user_config = $app->user->metas['dashboard.order'];
 
 		if ($user_config)
 		{

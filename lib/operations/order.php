@@ -36,9 +36,7 @@ class OrderOperation extends Operation
 
 	protected function process()
 	{
-		global $core;
-
-		$core->user->metas['dashboard.order'] = json_encode($this->request['order']);
+		$this->app->user->metas['dashboard.order'] = json_encode($this->request['order']);
 
 		return true;
 	}

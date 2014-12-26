@@ -25,11 +25,10 @@ class Hooks
 	 */
 	static public function before_routing_dispatcher_dispatch(Dispatcher\BeforeDispatchEvent $event, Dispatcher $dispatcher)
 	{
-		global $core;
-
+		$app = \ICanBoogie\app();
 		$path = $event->request->decontextualized_path;
 
-		if ($path !== '/admin' || $core->user->is_guest || $core->user instanceof \Icybee\Modules\Members\Member)
+		if ($path !== '/admin' || $app->user->is_guest || $app->user instanceof \Icybee\Modules\Members\Member)
 		{
 			return;
 		}
