@@ -11,7 +11,7 @@
 
 namespace Icybee\Modules\Dashboard;
 
-class BlockController extends \Icybee\BlockController
+class BlockController extends \Icybee\Controller\BlockController
 {
 	protected function control_permission($permission)
 	{

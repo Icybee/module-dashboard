@@ -12,7 +12,7 @@
 namespace Icybee\Modules\Dashboard;
 
 use ICanBoogie\HTTP\RedirectResponse;
-use ICanBoogie\Routing\Dispatcher;
+use ICanBoogie\Routing\RouteDispatcher;
 
 class Hooks
 {
@@ -20,10 +20,10 @@ class Hooks
 	 * If the user is authenticated and the request path is "/admin" the request is redirected to
 	 * the dashboard.
 	 *
-	 * @param Dispatcher\BeforeDispatchEvent $event
-	 * @param Dispatcher $dispatcher
+	 * @param RouteDispatcher\BeforeDispatchEvent $event
+	 * @param RouteDispatcher $dispatcher
 	 */
-	static public function before_routing_dispatcher_dispatch(Dispatcher\BeforeDispatchEvent $event, Dispatcher $dispatcher)
+	static public function before_routing_dispatcher_dispatch(RouteDispatcher\BeforeDispatchEvent $event, RouteDispatcher $dispatcher)
 	{
 		$app = \ICanBoogie\app();
 		$path = $event->request->decontextualized_path;
