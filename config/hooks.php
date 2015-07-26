@@ -2,11 +2,15 @@
 
 namespace Icybee\Modules\Dashboard;
 
+use ICanBoogie\Routing\RouteDispatcher;
+
+$hooks = Hooks::class . '::';
+
 return [
 
 	'events' => [
 
-		'ICanBoogie\Routing\Dispatcher::dispatch:before' => __NAMESPACE__ . '\Hooks::before_routing_dispatcher_dispatch'
+		RouteDispatcher::class . '::dispatch:before' => $hooks . 'before_routing_dispatcher_dispatch'
 
 	]
 

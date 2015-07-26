@@ -12,7 +12,7 @@ Widgets can be rearranged, added, removed, and configured.
 
 ## A redirection for authenticated users
 
-The module attaches an event hook to the `ICanBoogie\HTTP\Dispatcher::dispatch:before` event
+The module attaches an event hook to the `ICanBoogie\Routing\RouteDispatcher::dispatch:before` event
 in order to redirect authenticated users requesting the "/admin" URL to the dashboard
 ("/admin/dashbord").
 
