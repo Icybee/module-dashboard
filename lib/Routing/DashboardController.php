@@ -9,17 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Icybee\Modules\Dashboard;
+namespace Icybee\Modules\Dashboard\Routing;
 
-class BlockController extends \Icybee\Controller\BlockController
+use Icybee\Routing\AdminController;
+
+class DashboardController extends AdminController
 {
-	protected function control_permission($permission)
-	{
-		if ($this->user->is_guest)
-		{
-			return false;
-		}
 
-		return true;
-	}
 }

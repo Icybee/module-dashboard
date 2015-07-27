@@ -14,6 +14,8 @@ namespace Icybee\Modules\Dashboard;
 use ICanBoogie\HTTP\RedirectResponse;
 use ICanBoogie\Routing\RouteDispatcher;
 
+use Icybee\Modules\Members\Member;
+
 class Hooks
 {
 	/**
@@ -25,14 +27,24 @@ class Hooks
 	 */
 	static public function before_routing_dispatcher_dispatch(RouteDispatcher\BeforeDispatchEvent $event, RouteDispatcher $dispatcher)
 	{
-		$app = \ICanBoogie\app();
+		$app = self::app();
+
+		$user = $app->user;
 		$path = $event->request->decontextualized_path;
 
-		if ($path !== '/admin' || $app->user->is_guest || $app->user instanceof \Icybee\Modules\Members\Member)
+		if ($path !== '/admin' || $user->is_guest || $user instanceof Member)
 		{
 			return;
 		}
 
-		$event->response = new RedirectResponse($app->routes['admin:dashboard']);
+		$event->response = new RedirectResponse($app->routes['admin:dashboard:index']);
+	}
+
+	/**
+	 * @return \ICanBoogie\Core|\Icybee\Binding\CoreBindings
+	 */
+	static private function app()
+	{
+		return \ICanBoogie\app();
 	}
 }
