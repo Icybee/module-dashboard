@@ -103,7 +103,7 @@ EOT;
 				continue;
 			}
 
-			$title = I18n\t($id, [ ], [ 'scope' => 'dashboard.title', 'default' => $descriptor['title'] ]);
+			$title = $this->t($id, [ ], [ 'scope' => 'dashboard.title', 'default' => $descriptor['title'] ]);
 
 			$panel = <<<EOT
 <div class="panel" id="$id">

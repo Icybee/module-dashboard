@@ -15,9 +15,9 @@ return [
 
 	'admin:dashboard:index' => [
 
-		'pattern' => '/admin/dashboard',
-		'block' => 'dashboard',
-		'controller' => Routing\DashboardController::class
+		'pattern' => '/admin',
+		'controller' => Routing\DashboardController::class . '#index',
+		'module' => 'dashboard'
 
 	]
 

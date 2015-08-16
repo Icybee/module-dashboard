@@ -13,12 +13,15 @@ namespace Icybee\Modules\Dashboard;
 
 use ICanBoogie\Errors;
 use ICanBoogie\Operation;
+use Icybee\Binding\ObjectBindings;
 
 /**
  * Saves the order of the user's dashboard blocks.
  */
 class OrderOperation extends Operation
 {
+	use ObjectBindings;
+
 	protected function get_controls()
 	{
 		return array
