@@ -17,8 +17,8 @@
 		"source": "https://github.com/Icybee/module-dashboard"
 	},
 	"require": {
-		"php": ">=5.4.0",
-		"icanboogie/module-installer": "~1.2"
+		"php": ">=5.5.0",
+		"icanboogie/module-installer": "^1.2.3"
 	},
 	"autoload": {
 		"classmap": [ "lib" ]
