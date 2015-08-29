@@ -9,10 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Icybee\Modules\Dashboard;
+namespace Icybee\Modules\Dashboard\Operation;
 
 use ICanBoogie\Errors;
 use ICanBoogie\Operation;
+
 use Icybee\Binding\ObjectBindings;
 
 /**
