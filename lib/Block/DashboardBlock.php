@@ -9,20 +9,24 @@
  * file that was distributed with this source code.
  */
 
-namespace Icybee\Modules\Dashboard;
+namespace Icybee\Modules\Dashboard\Block;
 
 use ICanBoogie\I18n;
 
+use Brickrouge\Document;
 use Brickrouge\Element;
+
+use Icybee\Modules\Dashboard as Root;
+use Icybee\Modules\Dashboard\Module;
 
 class DashboardBlock extends Element
 {
-	static protected function add_assets(\Brickrouge\Document $document)
+	static protected function add_assets(Document $document)
 	{
 		parent::add_assets($document);
 
-		$document->css->add(DIR . 'public/dashboard.css');
-		$document->js->add(DIR . 'public/dashboard.js');
+		$document->css->add(Root\DIR . 'public/dashboard.css');
+		$document->js->add(Root\DIR . 'public/dashboard.js');
 	}
 
 	/**

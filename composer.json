@@ -21,6 +21,8 @@
 		"icanboogie/module-installer": "^1.2.3"
 	},
 	"autoload": {
-		"classmap": [ "lib" ]
+		"psr-4": {
+			"Icybee\\Modules\\Dashboard\\": "lib"
+		}
 	}
 }
