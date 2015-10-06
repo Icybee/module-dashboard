@@ -88,35 +88,14 @@ EOT;
 
 		foreach ($panels as $id => $descriptor)
 		{
-			try
-			{
-				if (empty($descriptor['callback']))
-				{
-					continue;
-				}
+			$rendered_panel = $this->render_panel($id, $descriptor);
 
-				$contents = call_user_func($descriptor['callback']);
-			}
-			catch (\Exception $e)
-			{
-				$contents = \Brickrouge\render_exception($e);
-			}
-
-			if (!$contents)
+			if (!$rendered_panel)
 			{
 				continue;
 			}
 
-			$title = $this->t($id, [ ], [ 'scope' => 'dashboard.title', 'default' => $descriptor['title'] ]);
-
-			$panel = <<<EOT
-<div class="panel" id="$id">
-	<div class="panel-title">$title</div>
-	<div class="panel-contents">$contents</div>
-</div>
-EOT;
-
-			$colunms[$descriptor['column']][] = $panel;
+			$colunms[$descriptor['column']][] = $rendered_panel;
 		}
 
 		$html = '';
@@ -134,5 +113,42 @@ EOT;
 		}
 
 		return $html;
+	}
+
+	protected function render_panel($id, array $descriptor)
+	{
+		try
+		{
+			if (empty($descriptor['callback']))
+			{
+				return null;
+			}
+
+			$contents = call_user_func($descriptor['callback']);
+		}
+		catch (\Exception $e)
+		{
+			$contents = \Brickrouge\render_exception($e);
+		}
+
+		if (!$contents)
+		{
+			return null;
+		}
+
+		$title = $this->t($id, [ ], [ 'scope' => 'dashboard.title', 'default' => $descriptor['title'] ]);
+
+		return $this->app->render([
+
+			'content' => $contents,
+			'template' => 'dashboard/panel',
+			'locals' => [
+
+				'title' => $title,
+				'id' => $id
+
+			]
+
+		]);
 	}
 }

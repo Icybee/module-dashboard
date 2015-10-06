@@ -1,0 +1,16 @@
+<?php
+
+namespace ICanBoogie;
+
+/**
+ * @var string $id
+ * @var string $title
+ * @var \ICanBoogie\Render\String $this
+ */
+
+?>
+
+<div class="panel" id="<?= escape($id) ?>">
+	<div class="panel-title"><?= escape($title) ?></div>
+	<div class="panel-contents"><?= $this ?></div>
+</div>
