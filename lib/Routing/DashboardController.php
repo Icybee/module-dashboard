@@ -15,7 +15,7 @@ use Icybee\Routing\AdminController;
 
 class DashboardController extends AdminController
 {
-	protected function index()
+	protected function action_index()
 	{
 		$this->view->content = $this->module->getBlock('dashboard');
 		$this->view['block_name'] = 'dashboard';
