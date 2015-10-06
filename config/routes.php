@@ -9,15 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace Icybee\Modules\Dashboard;
+namespace Icybee\Modules\Dashboard\Routing;
+
+use ICanBoogie\Module\ModuleRouteDefinition as Route;
+use Icybee\Routing\RouteMaker as Make;
 
 return [
 
 	'admin:dashboard:index' => [
 
-		'pattern' => '/admin',
-		'controller' => Routing\DashboardController::class . '#index',
-		'module' => 'dashboard'
+		Route::PATTERN => '/admin',
+		Route::CONTROLLER => DashboardController::class,
+		Route::ACTION => Make::ACTION_INDEX,
+		Route::MODULE => 'dashboard'
 
 	]
 

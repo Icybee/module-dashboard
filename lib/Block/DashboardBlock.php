@@ -18,6 +18,7 @@ use Brickrouge\Element;
 
 use Icybee\Modules\Dashboard as Root;
 use Icybee\Modules\Dashboard\Module;
+use Icybee\Modules\Dashboard\PanelConfig;
 
 class DashboardBlock extends Element
 {
@@ -50,7 +51,7 @@ class DashboardBlock extends Element
 
 		foreach ($panels as $i => $panel)
 		{
-			$panels[$i] +=  [ 'column' => 0, 'weight' => 0 ];
+			$panels[$i] +=  [ PanelConfig::COLUMN => 0, PanelConfig::WEIGHT => 0 ];
 		}
 
 		$user_config = $app->user->metas['dashboard.order'];
@@ -63,13 +64,13 @@ class DashboardBlock extends Element
 			{
 				foreach ($user_panels as $panel_weight => $panel_id)
 				{
-					$panels[$panel_id]['column'] = $column_index;
-					$panels[$panel_id]['weight'] = $panel_weight;
+					$panels[$panel_id][PanelConfig::COLUMN] = $column_index;
+					$panels[$panel_id][PanelConfig::WEIGHT] = $panel_weight;
 				}
 			}
 		}
 
-		uasort($panels, function($a, $b) { return $a['weight'] - $b['weight']; });
+		uasort($panels, function($a, $b) { return $a[PanelConfig::WEIGHT] - $b[PanelConfig::WEIGHT]; });
 
 		$html = $this->render_panels($panels);
 
@@ -95,7 +96,7 @@ EOT;
 				continue;
 			}
 
-			$colunms[$descriptor['column']][] = $rendered_panel;
+			$colunms[$descriptor[PanelConfig::COLUMN]][] = $rendered_panel;
 		}
 
 		$html = '';
@@ -119,12 +120,12 @@ EOT;
 	{
 		try
 		{
-			if (empty($descriptor['callback']))
+			if (empty($descriptor[PanelConfig::CALLBACK]))
 			{
 				return null;
 			}
 
-			$contents = call_user_func($descriptor['callback']);
+			$contents = call_user_func($descriptor[PanelConfig::CALLBACK]);
 		}
 		catch (\Exception $e)
 		{
@@ -136,7 +137,7 @@ EOT;
 			return null;
 		}
 
-		$title = $this->t($id, [ ], [ 'scope' => 'dashboard.title', 'default' => $descriptor['title'] ]);
+		$title = $this->t($id, [ ], [ 'scope' => 'dashboard.title', 'default' => $descriptor[PanelConfig::TITLE] ]);
 
 		return $this->app->render([
 

@@ -25,12 +25,11 @@ class OrderOperation extends Operation
 
 	protected function get_controls()
 	{
-		return array
-		(
-			self::CONTROL_AUTHENTICATION => true
-		)
+		return [
 
-		+ parent::get_controls();
+			self::CONTROL_AUTHENTICATION => true
+
+		] + parent::get_controls();
 	}
 
 	protected function validate(Errors $errors)
