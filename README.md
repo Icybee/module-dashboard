@@ -38,7 +38,7 @@ The order in which the user rearranged its widgets is stored in the `dashboard.o
 
 ## Requirement
 
-The package requires PHP 5.4 or later.
+The package requires PHP 5.6 or later.
 
 
 

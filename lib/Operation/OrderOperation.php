@@ -11,10 +11,9 @@
 
 namespace Icybee\Modules\Dashboard\Operation;
 
+use ICanBoogie\Binding\PrototypedBindings;
 use ICanBoogie\ErrorCollection;
 use ICanBoogie\Operation;
-
-use Icybee\Binding\PrototypedBindings;
 
 /**
  * Saves the order of the user's dashboard blocks.
