@@ -9,7 +9,6 @@ return [
 	Descriptor::DESCRIPTION => "Hosts widgets that display information about what is happening in Icybee.",
 	Descriptor::CATEGORY => 'dashboard',
 	Descriptor::NS => __NAMESPACE__,
-	Descriptor::REQUIRED => true,
 	Descriptor::PERMISSION => false,
 	Descriptor::TITLE => "Dashboard"
 
